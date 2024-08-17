@@ -96,6 +96,10 @@ node build/azure-pipelines/distro/mixin-npm
 
 export VSCODE_NODE_GLIBC="-glibc-${GLIBC_VERSION}"
 
+ulimit -a
+ulimit -n 65536
+ulimit -a
+
 yarn gulp minify-vscode-reh
 yarn gulp "vscode-reh-${VSCODE_PLATFORM}-${VSCODE_ARCH}-min-ci"
 

@@ -20,6 +20,9 @@ if [[ "${SHOULD_BUILD}" == "yes" ]]; then
   yarn gulp compile-build
   yarn gulp compile-extension-media
   yarn gulp compile-extensions-build
+  ulimit -a
+  ulimit -n 65536
+  ulimit -a
   yarn gulp minify-vscode
 
   if [[ "${OS_NAME}" == "osx" ]]; then
